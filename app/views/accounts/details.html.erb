@@ -1,0 +1,20 @@
+<h1>Search for user <%= @name %></h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">User Name</th>
+      <th scope="col" colspan="2">Account</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @account_attrs.each_with_index do |attr, index| %>
+      <tr>
+        <% if index == 0 %>
+          <td scope="row" rowspan="<%= @account_attrs.count %>"><%= @name %></td>
+        <% end %>
+        <td><%= attr["name"] %></td>
+        <td><%= attr["balance"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
